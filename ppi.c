@@ -6,6 +6,7 @@
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+#include <omp.h>
 
 #define FPTYPE double
 
@@ -17,19 +18,19 @@ static double rtclock(){
 
 int main(int argc, char** argv)
 {
-   unsigned niter=0;
-   unsigned i,count=0; /* # of points in the 1st quadrant of unit circle */
+   long int niter=0;
+   long int i,count=0; /* # of points in the 1st quadrant of unit circle */
    FPTYPE pi;
    double startt, stopt;
 
    if(argc < 2){
-      printf("Usage: %s ITERATIONS    # 2^ITERATIONS iterations will be used.", argv[0]);
+      printf("Usage: %s ITERATIONS    # 2^ITERATIONS iterations will be used.\n", argv[0]);
       exit(1);
    }
 
    niter = atoi(argv[1]);
    niter = pow(2, niter);
-   printf("Estimating pi with %u iterations...\n", niter);
+   printf("Estimating pi with %ld iterations...\n", niter);
    startt = rtclock();
 
    /* initialize random numbers */
@@ -52,6 +53,6 @@ int main(int argc, char** argv)
    stopt = rtclock();
 
    printf("\tEstimate of pi is %g \n",pi);
-   printf("\tTook %g s: %g MFlops/s\n", stopt-startt, ((double)(niter * 6))/(stopt-startt)*1.0e-6);
+   printf("\tTook %g s: %g MFlops/s\n", stopt-startt, (((double)(niter) * 1.0e-6) * 6.0) / (stopt-startt));
 }
 
