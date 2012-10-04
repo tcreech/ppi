@@ -1,8 +1,8 @@
-BINS = ppi
+BINS = ppi ppi_threads
 
-all:	ppi
+all:	$(BINS)
 
-LDFLAGS += -lm -fopenmp
+LDFLAGS += -lm -fopenmp -lpthread
 CFLAGS += -O2 -fopenmp
 
 clean:
