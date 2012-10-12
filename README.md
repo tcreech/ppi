@@ -8,7 +8,7 @@ Beware static scheduling and load imbalance. Note that you can change OpenMP's s
 Example invocation
 ------------------
 
-To run 2^30 simulations distributed over all of your processors (with OpenMP):
+To run ![equation](http://latex.codecogs.com/gif.latex?2%5E%7B31%7D) simulations distributed over all of your processors (with OpenMP):
 
     $ ./ppi 30
     Estimating pi with 1073741824 iterations...
