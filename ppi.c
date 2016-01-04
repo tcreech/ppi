@@ -54,5 +54,6 @@ int main(int argc, char** argv)
 
    printf("\tEstimate of pi is %g \n",pi);
    printf("\tTook %g s: %g MFlops/s\n", stopt-startt, (((double)(niter) * 1.0e-6) * 6.0) / (stopt-startt));
+   return 0;
 }
 
