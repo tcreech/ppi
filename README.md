@@ -1,5 +1,6 @@
 ppi
 ===
+[![Build Status](https://travis-ci.org/tcreech/ppi.svg)](https://travis-ci.org/tcreech/ppi.svg)
 
 Super simple Monte-carlo pi estimation. Parallelized trivially with ptheads and OpenMP. For the simplest of benchmarking. To be clear, this is an awful benchmark, but I just needed something reasonably portable which can give an idea of the upper limit of a machine's floating point capabilities.
 
