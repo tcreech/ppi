@@ -1,5 +1,4 @@
 language:
-    - c
     - julia
 script: "make && make test"
 compiler:
