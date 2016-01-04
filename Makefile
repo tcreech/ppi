@@ -11,7 +11,8 @@ CFLAGS += -O2 -fopenmp
 clean:
 	-rm -f $(BINS)
 
-test:	all
+test:	all ppi.jl
 	./ppi_threads 4 10
 	OMP_NUM_THREADS=4 ./ppi 10
+	julia -p 4 ./ppi.jl
 
