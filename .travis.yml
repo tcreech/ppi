@@ -5,5 +5,7 @@ script: "make && make test"
 compiler:
     - gcc
 julia:
+    - 0.3
     - 0.4
+    - nightly
 
