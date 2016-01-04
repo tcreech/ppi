@@ -4,4 +4,6 @@ language:
 script: "make && make test"
 compiler:
     - gcc
+julia:
+    - 0.4
 
